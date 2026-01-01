@@ -1,0 +1,9 @@
+{
+  "name": "@goproxy/client",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.js",
+  "dependencies": {
+    "ioredis": "^5.0.0"
+  }
+}

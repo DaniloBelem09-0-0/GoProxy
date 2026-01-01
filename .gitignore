@@ -1,0 +1,66 @@
+# ===========================
+# 🟢 NODE.JS (Control Plane & Libs)
+# ===========================
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json # OPCIONAL: Em monorepos, as vezes mantemos apenas o da raiz.
+*.tgz             # Arquivos gerados pelo 'npm pack' (teste local da lib)
+
+# Pastas de build/distribuição
+dist/
+build/
+coverage/
+
+# ===========================
+# 🔵 GO (Data Plane)
+# ===========================
+# Binários compilados (windows, mac, linux)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Binário específico do seu projeto (se você buildar localmente)
+services/data-plane/main
+services/data-plane/data-plane
+services/data-plane/goproxy
+
+# Go Workspace (usado localmente em monorepos)
+go.work
+go.work.sum
+
+# Vendor (caso você não queira commitar dependências do Go)
+vendor/
+
+# ===========================
+# 🐳 DOCKER & INFRA
+# ===========================
+.docker/
+docker-compose.override.yml  # Configurações locais que não vão para o time todo
+
+# Dados persistentes (se você mapeou volumes locais)
+redis-data/
+prometheus-data/
+grafana-data/
+
+# ===========================
+# 🔐 SEGURANÇA (CRÍTICO)
+# ===========================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.cert
+
+# ===========================
+# 🖥️ IDE & OS (Manjaro/Linux/VSCode)
+# ===========================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~

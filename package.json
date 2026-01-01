@@ -1,0 +1,8 @@
+{
+  "name": "goproxy-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ]
+}
