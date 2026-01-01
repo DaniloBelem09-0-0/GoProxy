@@ -1,9 +1,0 @@
-docker exec -it data-plane-redis-1 redis-cli PUBLISH config_updates  '{"path": "/teste", "backends": ["http://0.0.0.0:3001", "http://0.0.0.0:3002"]}'
-
-docker logs -f data-plane-data-plane-1
-
-docker exec -it data-plane-redis-1 redis-cli PUBLISH config_updates '{"path": "/users", "backends": ["http://app-users-1:5678", "http://app-users-2:5678"]}'
-
-docker exec -it data-plane-redis-1 redis-cli FLUSHALL
-
-docker exec -it data-plane-redis-1 redis-cli PUBLISH config_updates  '{"path": "/teste", "backends": ["http://0.0.0.0:3001", "http://0.0.0.0:3002"]}'
