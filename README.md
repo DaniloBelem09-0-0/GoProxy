@@ -17,10 +17,10 @@ O projeto segue o padrão **Control Plane / Data Plane**, comum em grandes orque
 
 ```mermaid
 graph LR
-    User[Client/User] -->|HTTP Request| DP[Data Plane (Go)]
-    DP -->|Round Robin| Backend1[Microservice A]
-    DP -->|Round Robin| Backend2[Microservice B]
+    User["Client/User"] -->|HTTP Request| DP["Data Plane (Go)"]
+    DP -->|"Round Robin"| Backend1["Microservice A"]
+    DP -->|"Round Robin"| Backend2["Microservice B"]
     
-    Admin[Admin/Dev] -->|REST API| CP[Control Plane (Node.js)]
-    CP -->|Publish Config| Redis[(Redis Pub/Sub)]
-    Redis -->|Subscribe Update| DP
+    Admin["Admin/Dev"] -->|"REST API"| CP["Control Plane (Node.js)"]
+    CP -->|"Publish Config"| Redis[("Redis Pub/Sub")]
+    Redis -->|"Subscribe Update"| DP
